@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="KFCMenuAPI.BLL/KFCMenuAPI.BLL.csproj" Id="2c2deed3-fd56-4baa-869b-f544770eaa85" />
+  <Project Path="KFCMenuAPI.DAL/KFCMenuAPI.DAL.csproj" Id="56cbc339-7349-441e-9030-4c4b926da418" />
+  <Project Path="KFCMenuAPI.Model/KFCMenuAPI.Model.csproj" />
+  <Project Path="KFCMenuAPI/KFCMenuAPI.csproj" Id="cc543cd2-599e-4e32-965a-38d669301318" />
+</Solution>
