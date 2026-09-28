@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace KFCMenuAPI.Model
 {
-    internal class Ingredient
+    public class Ingredient
     {
+        public int IngredientId { get; set; }
+
+        public string Name { get; set; }
+
+        public List<MenuItem> MenuItems { get; set; }
+
+        public Inventory Inventory { get; set; }
     }
 }
