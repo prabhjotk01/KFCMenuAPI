@@ -20,6 +20,10 @@ namespace KFCMenuAPI.DAL
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<MenuItem>()
+                .Property(m => m.Price)
+                .HasPrecision(10, 2);
+
             // Category 1 : Many MenuItems
             modelBuilder.Entity<MenuItem>()
                 .HasOne(m => m.Category)
