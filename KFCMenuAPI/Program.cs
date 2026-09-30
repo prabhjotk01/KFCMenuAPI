@@ -1,4 +1,6 @@
 using KFCMenuAPI.DAL;
+using KFCMenuAPI.DAL.Repositories;
+using KFCMenuAPI.BLL.Services;
 using Microsoft.EntityFrameworkCore;
 namespace KFCMenuAPI
 {
@@ -14,13 +16,25 @@ namespace KFCMenuAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddDbContext<KFCMenuDbContext>(options =>
             options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Configuration.GetConnectionString("DefaultConnection")));
+            // Repositories
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<IMenuItemRepository, MenuItemRepository>();
+            builder.Services.AddScoped<IIngredientRepository, IngredientRepository>();
+            builder.Services.AddScoped<IInventoryRepository, InventoryRepository>();
+
+            // Services
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
+            builder.Services.AddScoped<IMenuItemService, MenuItemService>();
+            builder.Services.AddScoped<IIngredientService, IngredientService>();
+            builder.Services.AddScoped<IInventoryService, InventoryService>();
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            // Configure the HTTP
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();

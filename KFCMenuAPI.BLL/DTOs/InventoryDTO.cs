@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace KFCMenuAPI.BLL.DTOs
 {
@@ -10,10 +6,13 @@ namespace KFCMenuAPI.BLL.DTOs
     {
         public int InventoryId { get; set; }
 
+        [Range(1, int.MaxValue)]
         public int IngredientId { get; set; }
 
+        [Range(0, int.MaxValue)]
         public int Quantity { get; set; }
 
+        [Range(0, int.MaxValue)]
         public int ReorderLevel { get; set; }
     }
 }

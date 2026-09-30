@@ -20,6 +20,6 @@ namespace KFCMenuAPI.Model
 
         public Category Category { get; set; }
 
-        public List<Ingredient> Ingredients { get; set; }
+        public List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
     }
 }
